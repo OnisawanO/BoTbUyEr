@@ -1,0 +1,51 @@
+{
+  "demand_fraction": 0.9,
+  "buyer_max_markup": 0.18,
+  "terminal_liquidation_fraction": 0.8,
+  "inventory": [
+    {"quality": "standard", "base_price": 100, "quantity": 2},
+    {"quality": "premium", "base_price": 150, "quantity": 2},
+    {"quality": "specialty", "base_price": 220, "quantity": 1}
+  ],
+  "teams": [
+    {
+      "name": "YOU",
+      "advice_type": "expected_payoff",
+      "initial_markup": 0.12,
+      "min_markup": -0.1,
+      "max_markup": 0.3,
+      "candidate_markups": [-0.1, -0.05, 0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3],
+      "prior_win_rate": 0.7,
+      "prior_price_sensitivity": 1.2,
+      "prior_strength": 4.0
+    },
+    {
+      "name": "rival-undercut",
+      "advice_type": "competitor_undercut",
+      "initial_markup": 0.08,
+      "min_markup": -0.1,
+      "max_markup": 0.3,
+      "undercut_amount": 1.0
+    },
+    {
+      "name": "rival-clearance",
+      "advice_type": "inventory_clearance",
+      "initial_markup": 0.2,
+      "min_markup": -0.1,
+      "max_markup": 0.3,
+      "stock_pressure": 0.12,
+      "time_pressure": 0.2
+    },
+    {
+      "name": "rival-expected-wide",
+      "advice_type": "expected_payoff",
+      "initial_markup": 0.16,
+      "min_markup": -0.1,
+      "max_markup": 0.3,
+      "candidate_markups": [-0.1, 0.0, 0.1, 0.2, 0.3],
+      "prior_win_rate": 0.62,
+      "prior_price_sensitivity": 1.0,
+      "prior_strength": 6.0
+    }
+  ]
+}
